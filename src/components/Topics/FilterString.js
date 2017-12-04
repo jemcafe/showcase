@@ -17,10 +17,10 @@ class FilterString extends Component {
 
   filterString ( arr, userInput ) {
     let newArr = []
-    for ( let i = 0; i < arr.length; i++) {
-        if ( arr[i].slice(0,userInput.length) === userInput) {
-            newArr.push(arr[i])
-        }
+    if ( userInput !== '' ) {
+      for ( let i = 0; i < arr.length; i++) {
+        if ( arr[i].slice(0,userInput.length) === userInput) { newArr.push(arr[i]) }
+      }
     }
 
     this.setState({ filteredArray: newArr })

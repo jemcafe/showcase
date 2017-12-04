@@ -19,10 +19,12 @@ class Palindrome extends Component {
     backwards = backwards.split('');
     backwards = backwards.reverse();
     backwards = backwards.join('');
-    if ( forwards === backwards ) {
-      this.setState({ palindrome: 'true' });
-    } else {
-      this.setState({ palindrome: 'false' });
+    if ( userInput !== '' ) {
+      if ( forwards === backwards ) {
+        this.setState({ palindrome: 'true' });
+      } else  {
+        this.setState({ palindrome: 'false' });
+      }
     }
   }
 
@@ -33,7 +35,7 @@ class Palindrome extends Component {
         <input className="inputLine" onChange={(e) => this.handleChange(e.target.value)}/>
         <button className="confirmationButton" onClick={() => this.trueOrFalse(this.state.userInput)}>Filter</button>
         <span className="resultsBox">Palindrome: { JSON.stringify(this.state.palindrome) } </span>
-        <span className="">Input: { JSON.stringify(this.state.userInput) } </span>
+        {/* <span className="">Input: { JSON.stringify(this.state.userInput) } </span> */}
       </div>
     )
   }
