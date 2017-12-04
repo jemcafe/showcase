@@ -9,7 +9,7 @@ class FilterObject extends Component {
             {
                 name: 'Jake',
                 height: '6 ft',
-                juice: '',
+                juice: 'grape',
                 hair: 'black'
             },
             {

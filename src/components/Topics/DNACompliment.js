@@ -11,22 +11,25 @@ class DNACompliment extends Component {
 
   handleChange ( val ) {
     val = val.toUpperCase()
-    this.setState({ userInput: val })
+    let dnaVal = val.split('')
+
+    // This filters the user's input and only keeps the four DNA letters that matter
+    dnaVal = dnaVal.filter((e) => e === 'A' ? e : e === 'T' ? e : e === 'C' ?  e : e === 'G' ?  e : '')
+    console.log(dnaVal)
+
+    dnaVal = dnaVal.join('')
+
+    this.setState({ userInput: dnaVal })
   }
 
   findCompliment ( str ) {
+    str = str.toUpperCase()
     let newStr = str.split('')
     
-      for ( var i = 0; i < str.length; i++) {
-        newStr[i] = newStr[i].toUpperCase()
-             if ( newStr[i] === 'A' ) { newStr[i] = 'T' }
-        else if ( newStr[i] === 'T' ) { newStr[i] = 'A' }
-        else if ( newStr[i] === 'C' ) { newStr[i] = 'G' }
-        else if ( newStr[i] === 'G' ) { newStr[i] = 'C' }
-      }
+    // This loops through the array and changes the characters to it's compliment
+    newStr = newStr.map((e) => e === 'A' ? 'T' : e === 'T' ? 'A' : e === 'C' ?  'G' : e === 'G' ?  'C' : '')
 
     newStr = newStr.join('')
-    console.log(newStr)
     
     this.setState({ newStrand: newStr })
   }
