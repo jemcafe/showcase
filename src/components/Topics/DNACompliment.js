@@ -38,7 +38,7 @@ class DNACompliment extends Component {
             <input className="inputLine" onChange={(e) => this.handleChange(e.target.value)}/>
             <button className="confirmationButton" onClick={() => this.findCompliment(this.state.userInput)}>Match</button>
             <span className="resultsBox">DNA Strand: { JSON.stringify(this.state.newStrand) }</span>
-            <span className="">Input: { JSON.stringify(this.state.userInput) }</span>
+            {/* <span className="">Input: { JSON.stringify(this.state.userInput) }</span> */}
           </div>
       )
   }
